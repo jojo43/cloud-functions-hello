@@ -10,6 +10,7 @@ steps:
       - 'functions'
       - 'deploy'
       - 'hello'
+      - '--entry-point=helloWorld'
       - '--runtime=nodejs10'
       - '--source=.'
       - '--trigger-http'
