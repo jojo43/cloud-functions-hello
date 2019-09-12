@@ -6,4 +6,10 @@ steps:
     args: ['lint']
 
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['functions', 'deploy', 'hello', '--source=.', '--trigger-http']
+    args:
+      - 'functions'
+      - 'deploy'
+      - 'hello'
+      - '--runtime=nodejs10'
+      - '--source=.'
+      - '--trigger-http'
