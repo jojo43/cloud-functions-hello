@@ -1,0 +1,18 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/gcloud/auth@master
+        env:
+          GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
+      - uses: actions/gcloud/cli@master
+        with:
+          args: functions deploy hello --entry-point=helloWorld --runtime=nodejs10 --source=. --trigger-http
