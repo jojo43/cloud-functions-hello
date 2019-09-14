@@ -15,4 +15,12 @@ jobs:
           GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
       - uses: actions/gcloud/cli@master
         with:
-          args: functions deploy hello --entry-point=helloWorld --runtime=nodejs10 --source=. --trigger-http
+          args: >
+            functions
+            deploy
+            hello
+            --entry-point=helloWorld
+            --project=${{ secrets.GCLOUD_PROJECT_ID }}
+            --runtime=nodejs10
+            --source=.
+            --trigger-http
