@@ -22,6 +22,5 @@ jobs:
             --entry-point=helloWorld
             --project=${{ secrets.GCLOUD_PROJECT_ID }}
             --runtime=nodejs10
-            --service-account=${{ secrets.GCLOUD_SERVICE_ACCOUNT }}
             --source=.
             --trigger-http
