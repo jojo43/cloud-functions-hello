@@ -30,7 +30,7 @@ jobs:
             functions
             deploy
             hello
-            --entry-point=helloWorld
+            --entry-point=handler
             --project=${{ secrets.GCLOUD_PROJECT_ID }}
             --runtime=nodejs10
             --source=dist
