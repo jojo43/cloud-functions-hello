@@ -1,6 +1,22 @@
-import { Request, Response } from 'express'
+import { ApolloServer, gql } from 'apollo-server-cloud-functions'
 
-export function helloWorld(req: Request, res: Response): void {
-  const message = req.query.message || req.body.message || 'Hello world!'
-  res.status(200).send(message)
+const typeDefs = gql`
+  type Query {
+    hello(name: String): String
+  }
+`
+
+const resolvers = {
+  Query: {
+    hello: (_, { name }): string => `Hello ${name}!`,
+  },
 }
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  playground: true,
+  introspection: true,
+})
+
+export const handler = server.createHandler()

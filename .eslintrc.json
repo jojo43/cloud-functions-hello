@@ -24,6 +24,7 @@
     "ecmaVersion": 2018
   },
   "rules": {
+    "comma-dangle": "off",
     "prettier/prettier": [
       "error"
     ],
