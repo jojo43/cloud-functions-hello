@@ -5,11 +5,14 @@
     "es6": true
   },
   "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "prettier",
     "standard"
   ],
   "plugins": [
+    "@typescript-eslint",
     "prettier"
   ],
   "globals": {
@@ -22,6 +25,7 @@
   "rules": {
     "prettier/prettier": [
       "error"
-    ]
+    ],
+    "space-before-function-paren": "off"
   }
 }
